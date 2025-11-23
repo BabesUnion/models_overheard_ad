@@ -1,64 +1,99 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8" />
-<title>Ad Calculator</title>
-<style>
-  body { font-family: sans-serif; max-width: 500px; margin: 40px auto; }
-  .block { margin-bottom: 20px; }
-  label { display: block; margin: 5px 0; }
-  .price { font-size: 24px; font-weight: bold; margin-top: 20px; }
-</style>
-</head>
-<body>
+  <meta charset="UTF-8" />
+  <title>Подслушано у Вебкам-моделей — Прайс рекламы</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: #AFEEEE; /* фон сайта */
+      color: #222;
+    }
 
-<h2>Калькулятор рекламы</h2>
+    .page {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 24px 12px 40px;
+    }
 
-<div class="block">
-  <h3>1. Пакет</h3>
-  <label><input type="radio" name="pack" value="55" checked> Стандарт ($55)</label>
-  <label><input type="radio" name="pack" value="75"> Стандарт+ ($75)</label>
-</div>
+    .container {
+      width: 100%;
+      max-width: 960px;
+    }
 
-<div class="block">
-  <h3>2. Время показа</h3>
-  <label><input type="radio" name="time" value="25" checked> Утро (+$25)</label>
-  <label><input type="radio" name="time" value="35"> День (+$35)</label>
-  <label><input type="radio" name="time" value="50"> Вечер (+$50)</label>
-  <label><input type="radio" name="time" value="80"> Ночь (+$80)</label>
-</div>
+    .card {
+      background-color: #FFC0CB; /* фон плашек */
+      border-radius: 18px;
+      padding: 18px 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
 
-<div class="block">
-  <h3>3. Дополнительно</h3>
-  <label><input type="checkbox" class="extra" value="50"> Пост без удаления (+$50)</label>
-  <label><input type="checkbox" class="extra" value="350"> Закреп на месяц (+$350)</label>
-  <label><input type="checkbox" class="extra" value="95"> Упоминание во всех постах (+$95)</label>
-</div>
+    h1, h2, h3 {
+      margin: 0 0 10px;
+    }
 
-<div class="price">Итог: $<span id="total">0</span></div>
+    h1 {
+      font-size: 26px;
+      text-align: center;
+    }
 
-<script>
-  function calc() {
-    let total = 0;
+    .subtitle {
+      text-align: center;
+      font-size: 14px;
+      opacity: 0.9;
+      margin-top: 4px;
+    }
 
-    // пакет
-    total += Number(document.querySelector('input[name="pack"]:checked').value);
+    .section-title {
+      font-size: 18px;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
 
-    // время
-    total += Number(document.querySelector('input[name="time"]:checked').value);
+    .option-group {
+      margin: 8px 0;
+    }
 
-    // допы
-    document.querySelectorAll('.extra:checked').forEach(el => {
-      total += Number(el.value);
-    });
+    .option {
+      display: flex;
+      align-items: center;
+      margin: 6px 0;
+      gap: 8px;
+      font-size: 14px;
+    }
 
-    document.getElementById('total').innerText = total;
-  }
+    .option input {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
 
-  document.querySelectorAll('input').forEach(i => i.addEventListener('change', calc));
+    .option label {
+      cursor: pointer;
+    }
 
-  calc(); // первый расчёт
-</script>
+    .price {
+      font-weight: 600;
+      white-space: nowrap;
+    }
 
-</body>
-</html>
+    .option-text {
+      flex: 1;
+    }
+
+    .total-card {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .total-amount {
+      font-size: 26px;
+      margin-top: 4px;
+    }
+
+    .btn-calc {
+      displa
