@@ -96,4 +96,251 @@
     }
 
     .btn-calc {
-      displa
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 22px;
+      border-radius: 999px;
+      border: none;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      background: #222;
+      color: #fff;
+      transition: transform 0.08s ease, box-shadow 0.08s ease, opacity 0.08s ease;
+    }
+
+    .btn-calc:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+      opacity: 0.95;
+    }
+
+    .btn-calc:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+
+    .note {
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .note a {
+      color: #222;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 14px 14px;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+
+      .total-card {
+        font-size: 16px;
+      }
+
+      .total-amount {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="container">
+
+      <!-- Заголовок -->
+      <div class="card">
+        <h1>Подслушано у Вебкам-моделей</h1>
+        <div class="subtitle">Прайс и условия рекламы · Только для оффлайн вебкам-студий</div>
+      </div>
+
+      <!-- Описание конструктора -->
+      <div class="card">
+        <div class="section-title">Собери свой конструктор рекламы</div>
+        <p style="margin: 0; font-size: 14px;">
+          Выберите размер рекламного поста, время выкладки и при необходимости добавьте дополнительные опции. 
+          Итоговая стоимость посчитается автоматически.
+        </p>
+      </div>
+
+      <!-- Размер поста -->
+      <div class="card">
+        <div class="section-title">Размер рекламного поста</div>
+
+        <div class="option-group" id="size-group">
+          <div class="option">
+            <input type="radio" name="size" id="size1" value="80" data-price="80" />
+            <label class="option-text" for="size1">
+              Меньше 500 символов плюс фото/видео
+            </label>
+            <span class="price">80&nbsp;$</span>
+          </div>
+
+          <div class="option">
+            <input type="radio" name="size" id="size2" value="90" data-price="90" />
+            <label class="option-text" for="size2">
+              От 500 до 1024 символа плюс фото/видео
+            </label>
+            <span class="price">90&nbsp;$</span>
+          </div>
+
+          <div class="option">
+            <input type="radio" name="size" id="size3" value="100" data-price="100" />
+            <label class="option-text" for="size3">
+              Больше 1024 символов плюс фото/видео
+            </label>
+            <span class="price">100&nbsp;$</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Время выкладки -->
+      <div class="card">
+        <div class="section-title">Выберите время выкладки</div>
+
+        <div class="option-group" id="time-group">
+          <div class="option">
+            <input type="radio" name="time" id="time1" value="70" data-price="70" />
+            <label class="option-text" for="time1">
+              Утро МСК (10:00 – 11:00 выкладка и далее в топе 2 часа)
+            </label>
+            <span class="price">70&nbsp;$</span>
+          </div>
+
+          <div class="option">
+            <input type="radio" name="time" id="time2" value="100" data-price="100" />
+            <label class="option-text" for="time2">
+              Утро МСК Плюс (10:00 – 11:00 выкладка и далее в топе 6 часов)
+            </label>
+            <span class="price">100&nbsp;$</span>
+          </div>
+
+          <div class="option">
+            <input type="radio" name="time" id="time3" value="80" data-price="80" />
+            <label class="option-text" for="time3">
+              День МСК (14:00 – 17:00 выкладка и далее в топе 2 часа)
+            </label>
+            <span class="price">80&nbsp;$</span>
+          </div>
+
+          <div class="option">
+            <input type="radio" name="time" id="time4" value="110" data-price="110" />
+            <label class="option-text" for="time4">
+              День МСК Плюс (14:00 – 17:00 выкладка и далее в топе 4 часа)
+            </label>
+            <span class="price">110&nbsp;$</span>
+          </div>
+
+          <div class="option">
+            <input type="radio" name="time" id="time5" value="100" data-price="100" />
+            <label class="option-text" for="time5">
+              Вечер МСК (17:00 – 19:00 выкладка и далее в топе 3 часа)
+            </label>
+            <span class="price">100&nbsp;$</span>
+          </div>
+
+          <div class="option">
+            <input type="radio" name="time" id="time6" value="140" data-price="140" />
+            <label class="option-text" for="time6">
+              На всю ночь МСК (22:00 выкладка и далее в топе 14 часов)
+            </label>
+            <span class="price">140&nbsp;$</span>
+          </div>
+
+          <div class="option">
+            <input type="radio" name="time" id="time7" value="200" data-price="200" />
+            <label class="option-text" for="time7">
+              Сутки (выкладка до 16:00 и далее в топе 24 часа)
+            </label>
+            <span class="price">200&nbsp;$</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Дополнительные опции -->
+      <div class="card">
+        <div class="section-title">Дополнительные опции</div>
+
+        <div class="option-group" id="extras-group">
+          <div class="option">
+            <input type="checkbox" id="extra1" value="130" data-price="130" />
+            <label class="option-text" for="extra1">
+              Закрепить пост на 48 часов
+            </label>
+            <span class="price">130&nbsp;$</span>
+          </div>
+
+          <div class="option">
+            <input type="checkbox" id="extra2" value="200" data-price="200" />
+            <label class="option-text" for="extra2">
+              Упоминание в каждом третьем посте, срок неделя
+            </label>
+            <span class="price">200&nbsp;$</span>
+          </div>
+        </div>
+
+        <button class="btn-calc" id="calcBtn">Посчитать стоимость</button>
+      </div>
+
+      <!-- Итоговая стоимость -->
+      <div class="card total-card">
+        <div>Итоговая стоимость:</div>
+        <div class="total-amount" id="totalValue">0&nbsp;$</div>
+      </div>
+
+      <!-- Внимание и правила -->
+      <div class="card">
+        <div class="section-title">Важная информация</div>
+        <p class="note">
+          Внимание! Способ оплаты только в USDT.
+          <br />
+          Подробные правила выкладки: 
+          <a href="https://teletype.in/@fapdesk/wfxuPQfk-MU" target="_blank" rel="noopener noreferrer">
+            перейти к правилам
+          </a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function calculateTotal() {
+      let total = 0;
+
+      // размер поста
+      const size = document.querySelector('input[name="size"]:checked');
+      if (size) {
+        total += Number(size.dataset.price);
+      }
+
+      // время выкладки
+      const time = document.querySelector('input[name="time"]:checked');
+      if (time) {
+        total += Number(time.dataset.price);
+      }
+
+      // доп. опции
+      const extras = document.querySelectorAll('#extras-group input[type="checkbox"]:checked');
+      extras.forEach(cb => {
+        total += Number(cb.dataset.price);
+      });
+
+      document.getElementById('totalValue').innerHTML = total + '&nbsp;$';
+    }
+
+    document.getElementById('calcBtn').addEventListener('click', calculateTotal);
+
+    // Считаем автоматически при изменении опций
+    document.querySelectorAll('input[name="size"], input[name="time"], #extras-group input[type="checkbox"]').forEach(el => {
+      el.addEventListener('change', calculateTotal);
+    });
+  </script>
+</body>
+</html>
