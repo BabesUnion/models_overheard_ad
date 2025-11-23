@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<title>Ad Calculator</title>
+<style>
+  body { font-family: sans-serif; max-width: 500px; margin: 40px auto; }
+  .block { margin-bottom: 20px; }
+  label { display: block; margin: 5px 0; }
+  .price { font-size: 24px; font-weight: bold; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<h2>Калькулятор рекламы</h2>
+
+<div class="block">
+  <h3>1. Пакет</h3>
+  <label><input type="radio" name="pack" value="55" checked> Стандарт ($55)</label>
+  <label><input type="radio" name="pack" value="75"> Стандарт+ ($75)</label>
+</div>
+
+<div class="block">
+  <h3>2. Время показа</h3>
+  <label><input type="radio" name="time" value="25" checked> Утро (+$25)</label>
+  <label><input type="radio" name="time" value="35"> День (+$35)</label>
+  <label><input type="radio" name="time" value="50"> Вечер (+$50)</label>
+  <label><input type="radio" name="time" value="80"> Ночь (+$80)</label>
+</div>
+
+<div class="block">
+  <h3>3. Дополнительно</h3>
+  <label><input type="checkbox" class="extra" value="50"> Пост без удаления (+$50)</label>
+  <label><input type="checkbox" class="extra" value="350"> Закреп на месяц (+$350)</label>
+  <label><input type="checkbox" class="extra" value="95"> Упоминание во всех постах (+$95)</label>
+</div>
+
+<div class="price">Итог: $<span id="total">0</span></div>
+
+<script>
+  function calc() {
+    let total = 0;
+
+    // пакет
+    total += Number(document.querySelector('input[name="pack"]:checked').value);
+
+    // время
+    total += Number(document.querySelector('input[name="time"]:checked').value);
+
+    // допы
+    document.querySelectorAll('.extra:checked').forEach(el => {
+      total += Number(el.value);
+    });
+
+    document.getElementById('total').innerText = total;
+  }
+
+  document.querySelectorAll('input').forEach(i => i.addEventListener('change', calc));
+
+  calc(); // первый расчёт
+</script>
+
+</body>
+</html>
